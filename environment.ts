@@ -377,11 +377,11 @@ namespace Environment {
     export function ReadDust(vLED: DigitalPin, vo: AnalogPin): number {
         let voltage = 0;
         let dust = 0;
-        pins.digitalWritePin(vLED, 1);
+        pins.digitalWritePin(vLED, 0);
         control.waitMicros(160);
         voltage = pins.analogReadPin(vo);
         control.waitMicros(100);
-        pins.digitalWritePin(vLED, 0);
+        pins.digitalWritePin(vLED, 1);
         voltage = pins.map(
             voltage,
             0,
